@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPG - Tutti i progetti</title>
+    <link href="./output.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+    <!-- navbar -->
+    <nav class="border-b border-gray-100">
+        <script>
+            function mobileMenu() {
+                let menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+            }
+        </script>
+
+        <div class="px-8 max-w-7xl mx-auto">
+
+            <div class="flex justify-between font-light">
+
+                <div class="flex space-x-4">
+                    <!-- logo -->
+                    <div class="font-semibold">
+                        <a href="/" class="flex items-center py-5 px-2">
+                            <img class="mr-1"
+                                src="https://lh3.google.com/u/0/ogw/ADea4I7c7UUn4iONVQzisS5CLGDzwrWP3UAJpVDXCAGs=s32-c-mo" />
+                            <span>GPG</span>
+                        </a>
+                    </div>
+                    <!-- voci -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="/progetti" class="py-5 px-2 hover:bg-gray-200">
+                            Tutti i progetti
+                        </a>
+                        <a href="#" class="py-5 px-2 hover:bg-gray-200">
+                            About us
+                        </a>
+                    </div>
+                </div>
+                <!-- cerca -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div
+                        class="bg-gray-100 border border-gray-300 focus-within:border-gray-600 rounded-full h-10 flex w-96">
+                        <input
+                            class="placeholder:italic placeholder:text-slate-400 flex-grow px-6 rounded-full focus:outline-none font-light"
+                            placeholder="Cerca ..." type="search" name="search"></input>
+                        <button class="p-3 pr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="text-gray-700" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- bottene mobile -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="mobileMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- menu mobile -->
+            <div id="mobile-menu" class="border-t border-gray-100 hidden md:hidden">
+                <a href="/progetti" class="block py-2 px-4 text-sm hover:bg-gray-200">Tutti i progetti</a>
+                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">About us</a>
+
+                <!-- cerca -->
+                <div class="block py-2 px-2">
+                    <div
+                        class="bg-gray-100 border border-gray-300 focus-within:border-gray-600 rounded-full h-10 flex w-full">
+                        <input
+                            class="placeholder:italic placeholder:text-slate-400 grow px-6 rounded-full focus:outline-none font-light min-w-0"
+                            placeholder="Cerca ..." type="search" name="search"></input>
+                        <button class="p-3 pr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="text-gray-700" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!--wrapper CSS grid-->
+    <div class="my-8 max-w-7xl w-11/12 mx-auto grid gap-4 grid-cols-autofit-400 justify-center">
+
+        {{#each userNames}}
+
+            <!--card di singolo progetto-->
+            {{!-- TODO: evitare che l'overflow del testo allunghi la card --}}
+            <div class="p-6 lg:min-w-max bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Segnalazione di {{this}}</h5>
+                <ul class="list-disc list-inside my-4 font-normal text-gray-700 dark:text-gray-400">
+                    <li>
+                        <span class="font-bold">Creato il: </span> <span class="font-normal">01/01/2022</span>
+                    </li>
+                    <li>
+                        <span class="font-bold">Ultimo aggiornamento: </span> <span class="font-normal">02/01/2022</span>
+                    </li>
+                    <li>
+                        <span class="font-bold">Creatore: </span> <span class="font-normal">{{this}}</span>
+                    </li>
+                    <li>
+                        <span class="font-bold">Numero segnalazione: </span> <span class="font-normal">1</span>
+                    </li>
+                </ul>
+                <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 
+                focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Scarica progetto
+                    <svg class="ml-2 -mr-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                    </svg>
+                </a>
+            </div>
+
+        {{/each}}
+
+    </div>
+
+    <script src="/flowbite.js"></script>
+</body>
+</html>
